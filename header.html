@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    header {
+      background-color: #10657a;
+      color: white;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    .fa-solid {
+      display: none;
+    }
+    .anchor-tag {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      list-style: none;
+      /* text-decoration: underline; */
+    }
+    .anchor-tag a {
+      text-decoration: none;
+      color: black;
+      line-height: 1.5rem;
+      color: white;
+    }
+    .anchor-tag a:hover {
+      color: gray;
+    }
+    .btn {
+      padding: 12px 25px;
+      background-color: #f1a417;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+      width: 120px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+    .web-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .logo {
+      width: 119px;
+      height: 80px;
+    }
+    .title {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 60px;
+      color: rgb(251, 146, 60);
+    }
+    .hero {
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(255, 174, 0, 0.9),
+          rgba(0, 87, 102, 0.95)
+        ),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200' fill='none' stroke='%23ffffff'%3E%3Cg stroke-width='1.5' stroke-opacity='0.15'%3E%3Ccircle cx='100' cy='100' r='90'/%3E%3Cline x1='100' y1='10' x2='100' y2='190'/%3E%3Cline x1='10' y1='100' x2='190' y2='100'/%3E%3Ccircle cx='100' cy='100' r='10' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E");
+
+      background-size:
+        cover,
+        200px 200px;
+      background-repeat: no-repeat, repeat;
+    }
+    .hero .hero-content h1 {
+      color: white;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 60px;
+    }
+    .hero .hero-content p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        color: white;
+    }
+    .btn-primary {
+        padding: 12px 24px;
+        background-color: rgb(247, 162, 9);
+        color: white;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+    }
+    .btn-primary:hover {
+        background-color: rgb(2344, 88, 12);
+    }
+    .btn-secondary {
+        padding: 12px 24px;
+         color: white;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background-color: white;
+        color: rgb(15, 118, 110);
+    }
+    .btn-secondary:hover {
+        background-color: rgb(299, 231, 235);
+    }
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+    }
+    .about {
+  padding: 80px 10%;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+
+.about-images {
+  position: relative;
+  width: 500px;
+}
+
+.big-img {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.big-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.small-img {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.small-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.about-text {
+  max-width: 550px;
+}
+
+.about-text h4 {
+  color: #00a6b4;
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+}
+.services {
+  background-color: #1f6f7a;
+  padding: 100px 8%;
+  margin-top: 10px;
+}
+
+.services-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+  background: #f3f3f3;
+  padding: 40px;
+  border-radius: 30px;
+  width: 400px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 45px;
+  color: #f4a000;
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  line-height: 1.7;
+  color: #444;
+}
+footer p {
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+}
+    @media (max-width: 780px) {
+      .fa-solid {
+        display: flex;
+      }
+      .anchor-tag {
+        display: none;
+      }
+      .btn {
+        display: none;
+      }
+      .about-container {
+        flex-direction: column;
+      }
+     
+      .big-img, .small-img {
+        margin-left: 50px;
+      }
+      .services-container {
+        grid-template-columns: 1fr;
+        /* gap: 10px; */
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <div class="web-container">
+        <div class="container">
+          <div>
+            <img
+              class="logo"
+              src="https://res.cloudinary.com/dav4htlfu/image/upload/v1732300916/logo-02_ggpeyi.png"
+              alt=""
+            />
+          </div>
+          <nav class="anchor-tag">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Programs</a>
+            <a href="#">Diploma</a>
+            <a href="#">Contact</a>
+            <a href="#">Get certificate</a>
+          </nav>
+          <i class="fa-solid fa-bars"></i>
+          <button class="btn">GetStarted</button>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          Boosting Innovation,<br />
+          <span class="title">Encouraging Achievement!</span>
+        </h1>
+        <p>
+          We fuel the spirit of innovation in our students, equipping them with
+          cutting-edge tools and knowledge to solve the world's challenges.
+        </p>
+        <div class="buttons">
+          <button class="btn-primary">Get Started</button>
+          <button class="btn-secondary">Learn More</button>
+        </div>
+      </div>
+    </section>
+<section class="about">
+  <div class="about-container">
+<div class="about-images">
+      <div class="big-img">
+        <img src="https://res.cloudinary.com/dav4htlfu/image/upload/v1732300924/ui_t7szgn.jpg" alt="students">
+      </div>
+
+      <div class="small-img">
+        <img src="https://res.cloudinary.com/dav4htlfu/image/upload/v1732300917/iii_jer1gh.jpg" alt="student">
+      </div>
+    </div>
+<div class="about-text">
+      <h4>WHO WE ARE?</h4>
+      <p>
+        At the SIU-Innovation and Skill Center, we promote professionalism,
+        innovation, and entrepreneurship. We empower young entrepreneurs and
+        professionals in Somalia to explore their creativity in a supportive
+        environment. Our team guides startups from their early stages,
+        inspiring impactful solutions that drive progress globally.
+      </p>
+    </div>
+</div>
+</section>
+<section class="services">
+  <div class="services-container">
+
+    <div class="card">
+      <div class="icon">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <h3>Innovation & Design</h3>
+      <p>
+        The Innovation & Design section drives creative collaboration to
+        develop solutions for local and global challenges.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </div>
+      <h3>Training Programs</h3>
+      <p>
+        The training section of SIU Innovation and Skills Center Hub will
+        cater to both university students and external learners via an online
+        platform, expanding access to its resources.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <i class="fas fa-handshake"></i>
+      </div>
+      <h3>Community Projects</h3>
+      <p>
+        This section engages the local community in collaborative projects,
+        promoting social, environmental, and economic development through
+        design and innovation.
+      </p>
+    </div>
+
+  </div>
+</section>
+<footer>
+    <p>© 2024 SIU Innovation & Skills Center, Inc. All rights reserved.</p>
+</footer>
+  </body>
+</html>
